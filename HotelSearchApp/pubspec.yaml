@@ -1,0 +1,36 @@
+name: Hotel
+description: Learn how to use Material for structure and layout.
+
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+  
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.15.6
+
+  cupertino_icons: ^0.1.0
+  url_launcher: ^5.4.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  # TODO: Insert Fonts (103)
+  uses-material-design: true
+  assets:
+    - assets/diamond.png
+    # TODO: Add slanted menu asset (104)
+    - images/0-0.jpg
+    - images/1-0.jpg
+    - images/2-0.jpg
+    - images/3-0.jpg
+    - images/4-0.jpg
+    - images/5-0.jpg
+    - images/6-0.jpg
+    - images/7-0.jpg
+    - images/8-0.jpg
+    - images/9-0.jpg
+    - images/10-0.jpg
+    - images/11-0.jpg
