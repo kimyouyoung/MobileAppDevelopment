@@ -44,7 +44,7 @@ class ProductsRepository {
         isFeatured: false,
         name: 'Hotel Tops 10',
         stars: 5,
-        location: '455-34, Heonhwa-ro, Gangdong-myeon,, 25633 Gangneung',
+        location: '455-34, Heonhwa-ro, Gangdong-myeon, 25633 Gangneung',
         description: 'Hotel Tops 10 is just a 3-minute drive from Geumjin Beach and under a 40-minute drive from Gangneung KTX Station. Free WiFi access is available at the hotel. Each room at Hotel Tops 10 is fitted with a flat-screen TV, safety deposit box, fridge and electric kettle. Suites also feature views of the ocean, a sofa and a bath. Private bathroom comes with a hairdryer, bath amenities, a bathrobe, slippers and a toilet with an electronic bidet.',
       ),
       Product(
