@@ -14,6 +14,6 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:Hotel/app.dart';
+import 'package:Shrine/app.dart';
 
 void main() => runApp(ShrineApp());

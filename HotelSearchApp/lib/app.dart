@@ -14,8 +14,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:Hotel/home.dart';
-import 'package:Hotel/login.dart';
+import 'package:Shrine/home.dart';
+import 'package:Shrine/login.dart';
 
 // TODO: Convert ShrineApp to stateful widget (104)
 class ShrineApp extends StatelessWidget {

@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                 aspectRatio: 18 / 11,
                 child: Image.asset(
                   product.assetName,
-                  fit: BoxFit.fitWidth,
+                  fit: BoxFit.cover,
                 ),
               ),
               Column(
@@ -107,71 +107,6 @@ class _HomePageState extends State<HomePage> {
         ),
       );
     }).toList();
-  }
-
-  Card _buildListCards(BuildContext context, Product product) {
-    List<Product> products = ProductsRepository.loadProducts(Category.all);
-
-    if (products == null || products.isEmpty) {
-      return const Card();
-    }
-    return Card(
-      clipBehavior: Clip.antiAlias,
-      elevation: 5,
-      child: Container(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            AspectRatio(
-              aspectRatio: 18 / 11,
-              child: Image.asset(
-                product.assetName,
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0.0, 3.0, 16.0, 5.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      product.stars == 5 ? build5starIcon() : build4starIcon(),
-                      SizedBox(height: 1.0),
-                      Text(
-                        product.name,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15),
-                        maxLines: 1,
-                      ),
-                      Flexible(
-                        child: Text(
-                          product.location,
-                          style: TextStyle(fontSize: 10),
-                          maxLines: 2,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Container(
-                alignment: AlignmentDirectional.bottomEnd,
-                margin: EdgeInsets.fromLTRB(145.0, 0.0, 0.0, 5.5),
-                child: FlatButton(
-                  child: Text(
-                    'more',
-                    style: TextStyle(color: Colors.blue, fontSize: 10.0),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 
   @override
@@ -311,12 +246,97 @@ class _HomePageState extends State<HomePage> {
         child: ListView.builder(
             itemCount: products.length,
             itemBuilder: (context, index) {
-              return Card(
-                clipBehavior: Clip.antiAlias,
-                elevation: 5,
-                child: Container(
-                  child: Row(
-                    children: <Widget>[Text(products[index].name)],
+              return Padding(
+                padding: EdgeInsets.only(bottom: 3.0),
+                child: Card(
+                  // clipBehavior: Clip.antiAlias,
+                  elevation: 5,
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(10.0, 13.0, 10.0, 13.0),
+                    child: Container(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            width: 120.0,
+                            height: 110.0,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: AspectRatio(
+                                aspectRatio: 22 / 15,
+                                child: Image.asset(
+                                  products[index].assetName,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsets.fromLTRB(15.0, 5.0, 10.0, 5.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Container(
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          products[index].stars == 5
+                                              ? build5starIcon()
+                                              : build4starIcon(),
+                                          SizedBox(height: 5.0),
+                                          Text(
+                                            products[index].name,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
+                                            maxLines: 1,
+                                          ),
+                                          SizedBox(height: 10.0),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Icon(Icons.location_on,
+                                      color: Colors.lightBlue, size: 16),
+                                  // SizedBox(width: 6.0),
+                                  Flexible(
+                                    child: Text(
+                                      products[index].location,
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500),
+                                      maxLines: 2,
+                                    ),
+                                  ),
+                                ],
+                              )
+                              // Expanded(
+                              //   child: Container(
+                              //     alignment: AlignmentDirectional.bottomEnd,
+                              //     margin:
+                              //         EdgeInsets.fromLTRB(145.0, 0.0, 0.0, 5.5),
+                              //     child: FlatButton(
+                              //       child: Text(
+                              //         'more',
+                              //         style: TextStyle(
+                              //             color: Colors.blue, fontSize: 10.0),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               );

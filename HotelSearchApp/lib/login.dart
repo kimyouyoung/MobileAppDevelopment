@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import 'package:Hotel/signUp.dart';
+import 'package:Shrine/signUp.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
