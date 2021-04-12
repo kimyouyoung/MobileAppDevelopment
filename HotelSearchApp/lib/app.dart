@@ -16,8 +16,8 @@ import 'package:flutter/material.dart';
 
 import 'package:Shrine/home.dart';
 import 'package:Shrine/login.dart';
+import 'package:Shrine/search.dart';
 
-// TODO: Convert ShrineApp to stateful widget (104)
 class ShrineApp extends StatelessWidget {
 
   @override
@@ -29,9 +29,10 @@ class ShrineApp extends StatelessWidget {
       onGenerateRoute: _getRoute,
       routes: {
         '/home': (context) => HomePage(),
-        // '/searc'
+        '/search': (context) => Search(),
+        '/favoriteHotel': (context) => FavoriteHotel(),
+        '/myPage': (context) => MyPage(),
       },
-      // TODO: Add a theme (103)
     );
   }
 
@@ -47,6 +48,3 @@ class ShrineApp extends StatelessWidget {
     );
   }
 }
-
-// TODO: Build a Shrine Theme (103)
-// TODO: Build a Shrine Text Theme (103)

@@ -8,6 +8,7 @@ dependencies:
   flutter:
     sdk: flutter
   intl: ^0.15.6
+  rive: ^0.7.1
 
   cupertino_icons: ^0.1.0
   url_launcher: ^5.4.2
@@ -21,6 +22,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/diamond.png
+    - assets/knight063.riv
     # TODO: Add slanted menu asset (104)
     - images/0-0.jpg
     - images/1-0.jpg

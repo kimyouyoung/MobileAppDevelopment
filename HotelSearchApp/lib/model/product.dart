@@ -26,15 +26,15 @@ class Product {
     @required this.stars,
     @required this.location,
     @required this.description,
-    // @required this.starIcon,
+    @required this.phone,
   })  : assert(category != null),
         assert(id != null),
         assert(isFeatured != null),
         assert(name != null),
         assert(stars != null),
         assert(location != null),
-        assert(description != null);
-        // assert(starIcon != null);
+        assert(description != null),
+        assert(phone != null);
 
   final Category category;
   final int id;
@@ -43,10 +43,14 @@ class Product {
   final int stars;
   final String location;
   final String description;
-  // final Row starIcon;
+  final String phone;
 
   String get assetName => 'images/$id-0.jpg';
 
   @override
   String toString() => "$name (id=$id)";
+}
+
+class Save{
+  final _saved = <Product>{};
 }
